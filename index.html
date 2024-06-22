@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Game</title>
+</head>
+<p>"lets go to our childhood game 😃"</p>
+<body><div id="cen">
+<button id="but" type="submit" onclick="stone()">Stone</button>
+<button type="submit" onclick="paper()">Paper</button>
+<button type="submit" onclick="scissor()">Scissor</button></div><br><br>
+<div id="result"></div><br><br>
+ <div id="myans"></div>
+
+<script>
+let ans=""
+function stone(){
+
+ let array=["stone", "paper","scissor"]
+ let random=array[Math.floor(Math.random()*3)]
+ let result = document.querySelector("#result")
+  result.innerHTML = "My input is " + random
+  if(random=="scissor")
+  ans=" you won 💥"
+  else if(random=="paper")
+  ans="you lose🥲"
+  else
+  ans="replay😉"
+  
+  let myans = document.querySelector("#myans")
+  myans.innerHTML =  ans
+  let img = document.createElement('img');
+            img.src ="IMG_20230818_174937.jpg";
+            document.getElementById('body').appendChild(img);
+ }
+ function paper(){
+ let array=["stone", "paper","scissor"]
+ let random=array[Math.floor(Math.random()*3)]
+  if(random=="scissor")
+  ans="you lose🥲"
+  else if(random=="stone")
+  ans="you won💥"
+  else
+  ans="replay😉"
+  let result = document.querySelector("#result")
+  result.innerHTML = "My input is " + random
+  let myans = document.querySelector("#myans")
+  myans.innerHTML =  ans
+ 
+ }
+ function scissor() {
+  let array = ["stone", "paper", "scissor"]
+  let random = array[Math.floor(Math.random() * 3)]
+  if (random == "stone")
+   ans="you lose🥲"
+  else if (random == "paper")
+   ans="you won💥"
+  else
+   ans="replay😉"
+   let result=document.querySelector("#result")
+ result.innerHTML="My input is "+random
+ let myans = document.querySelector("#myans")
+ myans.innerHTML = ans
+
+ }
+</script>
+<style >
+body{
+ background: radial-gradient(#ffafbd, #ffc3a0);
+}
+button{
+width:80px;
+height: 30px;
+ border-radius:10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 20px;
+ text-transform:uppercase;
+ color:black;
+ font-weight: bold;
+ background: skyblue;
+ 
+}
+p{
+display: flex;
+ justify-content: center;
+ align-items: center;
+ text-transform:uppercase;
+ color:black;
+ font-style: italic;
+ font-weight: bold;
+}
+#cen{
+display: flex;
+ justify-content: center;
+}
+ 
+</style>
+</body>
+
+</html>
